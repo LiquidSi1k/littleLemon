@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "Karla";
+  src: url("../assets/fonts/Karla.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MarkaziText";
+  src: url("../assets/fonts/MarkaziText.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary-color: #f4ce14;
+  --secondary-color: #495e57;
+  --tertiary-color: #edefee;
+  --font-family: "Karla", serif;
+  --font-primary: "MArkaziText", serif;
+  --font-size: 16px;
+  --padding: 10px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+h1 {
+  font-family: var(--font-primary);
+  font-size: 30px;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  font-family: var(--font-family);
+  font-size: larger;
+}
+
+.center-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-full {
+  height: 100%;
+  width: 100%;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.list-none,
+.list-none a {
+  list-style: none;
+  text-decoration: none;
+}

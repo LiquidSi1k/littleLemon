@@ -1,12 +1,14 @@
-import "./App.css";
-import Header from "./components/Header";
-import Nav from "./components/Nav";
+import "./styles/global.css";
+import "./styles/components.css";
+import Layout from "./components/Layout";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Nav />
-      <Header />
+      <Layout>
+        <Outlet />
+      </Layout>
     </>
   );
 }

@@ -1,0 +1,35 @@
+.nav-style {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  && button {
+    background-color: inherit;
+    border: none;
+  }
+}
+
+.hero-section {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 20px;
+  && img {
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    height: 150px;
+  }
+  && h1 {
+    font-size: 48px;
+    color: var(--primary-color);
+    line-height: 40px;
+  }
+  && h1:last-of-type {
+    color: var(--tertiary-color);
+  }
+  && div {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}

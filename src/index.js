@@ -1,17 +1,50 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { Suspense } from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ReservationPage from "./pages/ReservationPage";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Lazy loading pages
+const Homepage = React.lazy(() => import("./pages/Homepage"));
+const NotFoundPage = React.lazy(() => import("./pages/NotFoundPage"));
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    errorElement: (
+      <Suspense fallback={<div className="center-all">Loading...</div>}>
+        <NotFoundPage />
+      </Suspense>
+    ),
+    children: [
+      {
+        index: true,
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <Homepage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "reservation",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <ReservationPage />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+]);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// Performance logging
 reportWebVitals();
