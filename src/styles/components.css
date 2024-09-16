@@ -33,3 +33,31 @@
     margin-bottom: 30px;
   }
 }
+
+.specials-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  && img {
+    margin-left: 20px;
+  }
+  && h4 {
+    margin-bottom: 20px;
+    font-size: larger;
+  }
+  && p {
+    color: var(--secondary-color);
+  }
+  && p:last-of-type {
+    margin-top: 20px;
+  }
+}
+
+.footer {
+  height: 40px;
+}

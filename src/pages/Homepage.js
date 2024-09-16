@@ -1,11 +1,17 @@
 import React from "react";
 import Hero from "../components/Hero";
+import Specials from "../components/Specials";
+import Reviews from "../components/Reviews";
+import History from "../components/History";
 
 const Homepage = () => {
   return (
-    <div>
+    <>
       <Hero />
-    </div>
+      <Specials />
+      <Reviews />
+      <History />
+    </>
   );
 };
 

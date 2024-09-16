@@ -12,12 +12,11 @@ const Nav = () => {
         <Button type="white">
           <RxHamburgerMenu size={40} />
         </Button>
-        <div className="flex">
-          <Link to={"/"}>
-            <img src={logo} height={50} width={50} alt="logo" />
-          </Link>
+
+        <Link to={"/"} className="flex list-none">
+          <img src={logo} height={50} width={50} alt="logo" />
           <h1>Little Lemon</h1>
-        </div>
+        </Link>
 
         <Button type="white">
           <TbBasketPlus size={40} />
