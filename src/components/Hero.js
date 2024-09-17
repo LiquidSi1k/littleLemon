@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section className="hero-section">
       <h1>Little Lemon</h1>
-      <h1>Sydney</h1>
+      <h1>Chicago</h1>
       <div className="flex">
         <p>
           Experience the zesty flavors of Little Lemon with fresh,

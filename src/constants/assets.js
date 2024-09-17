@@ -1,5 +1,6 @@
 import logo from "../assets/images/logo.svg";
 import foods from "../assets/images/foods.jpg";
-import sausage from "../assets/images/restauranfood.jpg";
+import restaurant from "../assets/images/restaurant.jpg";
+import mario from "../assets/images/marioAdrian.jpg";
 
-export { logo, foods, sausage };
+export { logo, foods, restaurant, mario };

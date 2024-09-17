@@ -1,32 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
+import { DataContext } from "../context/DataContext";
 
 const SpecialsMeals = ({ type }) => {
-  const [data, setData] = useState([]);
+  const { menu } = useContext(DataContext);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(
-        "https://dummyjson.com/recipes?sortBy=name&order=asc"
-      );
-      if (!response.ok) {
-        throw new Error("Unable to fetch data");
-      }
-      const result = await response.json();
-      setData(result.recipes);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const filteredData = data.filter((dish) => dish.mealType.includes(type));
+  const filteredData = menu.filter((dish) => dish.mealType.includes(type));
 
   return (
     <>
-      {(filteredData.length > 0 ? filteredData : data)
+      {(filteredData.length > 0 ? filteredData : menu)
         .slice(0, 10)
         .map((dish) => (
           <div className="specials-section" key={dish.name}>
