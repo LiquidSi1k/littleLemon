@@ -17,7 +17,7 @@ const Hero = () => {
         <img src={foods} alt="foods" />
       </div>
       <Button type="yellow" width={200}>
-        <Link className="list-none" to="/reservation">
+        <Link className="list-none" to="/booking">
           Reserve a Table
         </Link>
       </Button>

@@ -3,8 +3,9 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ReservationPage from "./pages/ReservationPage";
+
 import { DataProvider } from "./context/DataContext";
+import BookingPage from "./pages/BookingPage";
 
 const Homepage = React.lazy(() => import("./pages/Homepage"));
 const NotFoundPage = React.lazy(() => import("./pages/NotFoundPage"));
@@ -28,10 +29,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "reservation",
+        path: "booking",
         element: (
           <Suspense fallback={<div>Loading...</div>}>
-            <ReservationPage />
+            <BookingPage />
           </Suspense>
         ),
       },

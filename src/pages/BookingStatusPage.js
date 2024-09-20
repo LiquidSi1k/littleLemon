@@ -1,7 +1,7 @@
 import React from "react";
 
-const BookingStatusPage = () => {
-  return <div>BookingStatusPage</div>;
+const BookingPage = () => {
+  return <div>BookingPage</div>;
 };
 
-export default BookingStatusPage;
+export default BookingPage;
