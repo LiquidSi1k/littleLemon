@@ -1,19 +1,31 @@
 import React, { useState, useReducer, useEffect } from "react";
+import { fetchAPI, submitAPI } from "../utils/api";
 
 import BookingForm from "../components/BookingForm";
+import { useNavigate } from "react-router-dom";
 
 const initializeTimes = () => {
-  return ["18:00", "19:00", "20:00"];
+  const today = new Date();
+  return fetchAPI(today);
 };
 
 const updateTimes = (state, action) => {
-  return ["18:00", "19:00", "20:00", "21:00"];
+  switch (action.type) {
+    case "dateChange":
+      const newDate = new Date(action.payload);
+      return fetchAPI(newDate);
+    default:
+      return state;
+  }
 };
 
 const BookingPage = () => {
   const [date, setDate] = useState(undefined);
   const [guests, setGuests] = useState(1);
   const [occasion, setOccasion] = useState("Birthday");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
 
   const [availableTimes, dispatch] = useReducer(
     updateTimes,
@@ -36,9 +48,13 @@ const BookingPage = () => {
     }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log({ date, time, guests, occasion });
+  const handleSubmit = (formData) => {
+    const success = submitAPI(formData);
+    if (success) {
+      navigate("/confirmed", { state: formData });
+    } else {
+      alert("Failed to submit reservation");
+    }
   };
 
   return (
@@ -54,6 +70,10 @@ const BookingPage = () => {
         occasion={occasion}
         setOccasion={setOccasion}
         availableTimes={availableTimes}
+        name={name}
+        setName={setName}
+        email={email}
+        setEmail={setEmail}
       />
     </section>
   );

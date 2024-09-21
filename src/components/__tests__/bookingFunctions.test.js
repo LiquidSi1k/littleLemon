@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import BookingForm from "./components/BookingForm";
+import BookingForm from "../BookingForm";
 
 const initializeTimes = (initialTimes) => {
   return initialTimes;

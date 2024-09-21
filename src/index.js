@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { DataProvider } from "./context/DataContext";
 import BookingPage from "./pages/BookingPage";
+import ConfirmationPage from "./pages/ConfirmationPage";
 
 const Homepage = React.lazy(() => import("./pages/Homepage"));
 const NotFoundPage = React.lazy(() => import("./pages/NotFoundPage"));
@@ -33,6 +34,14 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<div>Loading...</div>}>
             <BookingPage />
+          </Suspense>
+        ),
+      },
+      {
+        path: "confirmed",
+        element: (
+          <Suspense fallback={<div>Loading...</div>}>
+            <ConfirmationPage />
           </Suspense>
         ),
       },

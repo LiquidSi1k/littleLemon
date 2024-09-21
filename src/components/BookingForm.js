@@ -12,10 +12,20 @@ const BookingForm = ({
   occasion,
   setOccasion,
   availableTimes,
+  name,
+  setName,
+  email,
+  setEmail,
 }) => {
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const formData = { date, time, guests, occasion, name, email };
+    handleSubmit(formData);
+  };
+
   return (
     <form
-      onSubmit={handleSubmit}
+      onSubmit={onSubmit}
       style={{
         display: "grid",
         maxWidth: "200px",
@@ -25,6 +35,26 @@ const BookingForm = ({
       }}
     >
       <h2>Booking Form</h2>
+      <label htmlFor="guest-name">Name</label>
+      <input
+        type="text"
+        id="guest-name"
+        value={name || ""}
+        onChange={(e) => setName(e.target.value)}
+        required
+        aria-required="true"
+      />
+
+      <label htmlFor="guest-email">Email</label>
+      <input
+        type="email"
+        id="guest-email"
+        value={email || ""}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+        aria-required="true"
+      />
+
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
@@ -60,7 +90,7 @@ const BookingForm = ({
         max="10"
         id="guests"
         value={guests}
-        onChange={(e) => setGuests(e.target.value)}
+        onChange={(e) => setGuests(Number(e.target.value))}
         required
         aria-required="true"
         aria-describedby="guests-description"
@@ -75,9 +105,16 @@ const BookingForm = ({
       >
         <option value="Birthday">Birthday</option>
         <option value="Anniversary">Anniversary</option>
+        <option value="Personal">Personal</option>
       </select>
 
-      <Button type="submit">Make Your reservation</Button>
+      <Button
+        type="submit"
+        disabled={!date || !time || guests < 1 || guests > 10}
+        aria-label="Make your reservation"
+      >
+        Make Your reservation
+      </Button>
     </form>
   );
 };
