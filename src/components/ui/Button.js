@@ -6,10 +6,11 @@ const Button = ({
   children,
   type = "yellow",
   width,
+  className = "",
 }) => {
   return (
     <button
-      className="component-button"
+      className={`component-button ${className}`}
       onClick={onClick}
       style={{
         color: type === "yellow" ? "black" : "#495E57",

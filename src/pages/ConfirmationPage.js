@@ -1,9 +1,12 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import Button from "../components/ui/Button";
+import { useNavigate } from "react-router-dom";
 
 const ConfirmationPage = () => {
   const location = useLocation();
   const { date, time, guests, occasion, name, email } = location.state || {};
+  const navigate = useNavigate();
 
   return (
     <section className="center-all">
@@ -38,6 +41,7 @@ const ConfirmationPage = () => {
             <strong>Occasion:</strong> {occasion}
           </li>
         </ul>
+        <Button onClick={() => navigate("/")}>Done</Button>
       </div>
     </section>
   );

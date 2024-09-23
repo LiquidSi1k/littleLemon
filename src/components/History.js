@@ -3,13 +3,13 @@ import { restaurant, mario } from "../constants/assets";
 
 const History = () => {
   return (
-    <section className="history-section flex-col">
-      <div>
+    <section className="history-section" id="history">
+      <div className="hist-text">
         <h1>Little Lemon</h1>
         <h1>Chicago</h1>
         <p>
           Nestled in the heart of Chicago, Little Lemon Chicago started as a
-          popular food truck in 2010, thanks to Maria and Alex, two childhood
+          popular food truck in 2010, thanks to Mario and Alex, two childhood
           friends from Greece. Their dream was to share Mediterranean-inspired
           dishes with a local twist. After the truck’s success, they opened a
           cozy restaurant in 2015, adorned with lemon-themed décor to honor

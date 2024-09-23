@@ -23,7 +23,7 @@ const Specials = () => {
   };
 
   return (
-    <section className="pad-20">
+    <section className="pad-20 specials " id="menu">
       <h3>ORDER FOR DELIVERY!</h3>
       <div className="py-20 flex">
         {orderType.map((item) => (

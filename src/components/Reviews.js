@@ -47,7 +47,7 @@ const Reviews = () => {
   };
 
   return (
-    <div className="review-section">
+    <div className="review-section" id="reviews">
       <h2>Customer Reviews</h2>
       <div className="reviews-list">
         {menu.length > 0 ? (
@@ -56,13 +56,15 @@ const Reviews = () => {
 
             return (
               <div key={index} className="flex review">
-                <div className="">
+                <div className="review-text">
                   <h4>
                     {customerData
                       ? `${customerData.firstName} ${customerData.lastName}`
                       : "Unknown User"}
                   </h4>{" "}
-                  <div className="rating">{renderStars(review.rating)}</div>
+                  <div className="rating center-all">
+                    {renderStars(review.rating)}
+                  </div>
                   <p className="comment">{review.name}</p>
                 </div>
                 <img
