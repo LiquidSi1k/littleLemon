@@ -24,17 +24,8 @@ const BookingForm = ({
   };
 
   return (
-    <form
-      onSubmit={onSubmit}
-      style={{
-        display: "grid",
-        maxWidth: "200px",
-        gap: "20px",
-        width: "100%",
-        marginTop: "20px",
-      }}
-    >
-      <h2>Booking Form</h2>
+    <form onSubmit={onSubmit} className="booking-form">
+      <h2 className="center-all">Booking Form</h2>
       <label htmlFor="guest-name">Name</label>
       <input
         type="text"
@@ -112,6 +103,7 @@ const BookingForm = ({
         type="submit"
         disabled={!date || !time || guests < 1 || guests > 10}
         aria-label="Make your reservation"
+        className="my-20"
       >
         Make Your reservation
       </Button>

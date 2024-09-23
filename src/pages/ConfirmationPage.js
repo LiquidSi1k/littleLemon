@@ -10,15 +10,7 @@ const ConfirmationPage = () => {
 
   return (
     <section className="center-all">
-      <div
-        style={{
-          display: "grid",
-          maxWidth: "200px",
-          gap: "20px",
-          width: "100%",
-          marginTop: "20px",
-        }}
-      >
+      <div className="confirmed-page">
         <h2>Your booking has been confirmed!</h2>
         <p>Here are your booking details:</p>
         <ul className="list-none">

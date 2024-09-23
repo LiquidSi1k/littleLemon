@@ -1,12 +1,11 @@
 /* nav section*/
-/* Mobile */
+
 @media (max-width: 767px) {
   .mob-hamburger {
     display: block;
   }
 }
 
-/* Tablet and larger */
 @media (min-width: 768px) {
   .nav-style {
     margin: 0 200px;
@@ -30,7 +29,7 @@
 }
 
 /* hero section*/
-/* Mobile */
+
 @media (max-width: 767px) {
   /* Styles for phones */
   .hero-section {
@@ -45,17 +44,55 @@
   }
 }
 
-/* Tablet */
-@media (max-width: 1090px) {
-  /* Styles for tablets */
-  /* .hero-section {
-    padding: 20px;
-  } */
+/* specials */
+@media (min-width: 780px) {
+  .specials-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-/* Desktop */
-@media (min-width: 1025px) {
-  /* Styles for desktops and larger devices */
+@media (min-width: 1024px) {
+  .specials-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 780px) {
+  .specials-container {
+    padding: 20px 0;
+  }
+  .specials-section {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .specials-section div {
+    text-align: start;
+  }
+  .specials-section div p:last-of-type {
+    margin-top: 30px;
+  }
+  .specials-section img {
+    max-width: 130px;
+    object-fit: cover;
+  }
+  .specials-delivery {
+    justify-content: start;
+  }
+}
+
+@media (max-width: 780px) {
+  .specials-section {
+    box-shadow: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 780px) {
+  .specials .flex,
+  .specials h3 {
+    padding-left: 0;
+  }
 }
 
 /* reviews section*/
