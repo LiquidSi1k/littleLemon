@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcapstone=self.webpackChunkcapstone||[]).push([[3],{3:(e,s,l)=>{l.r(s),l.d(s,{default:()=>a});l(43);var c=l(475),n=l(579);const a=()=>(0,n.jsxs)("div",{className:"center-all view-full flex-col",children:["404 not found.",(0,n.jsx)(c.N_,{to:"/",className:"list-none",children:"Home"})]})}}]);
+//# sourceMappingURL=3.2a598ecc.chunk.js.map
