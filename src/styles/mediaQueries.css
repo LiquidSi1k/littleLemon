@@ -77,6 +77,40 @@
   }
 }
 
+@media (max-width: 1190px) {
+  .review {
+    flex-direction: column-reverse;
+  }
+
+  .review-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 1480px) {
+  .reviews-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1180px) {
+  .reviews-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 570px) {
+  .reviews-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 780px) {
+  .review-section {
+    padding: 20px 20px;
+  }
+}
+
 /* history section */
 @media (max-width: 1090px) {
   .history-section {
@@ -119,5 +153,11 @@
 @media (min-width: 1090px) and (max-width: 1300px) {
   .history-img img:last-of-type {
     right: -2rem;
+  }
+}
+
+@media (max-width: 780px) {
+  .footer {
+    padding: 20px 20px;
   }
 }
